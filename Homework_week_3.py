@@ -1,3 +1,6 @@
+"""
+Script to go through multiple amber output files and return a file and possibly plot with the energy every 100 steps.
+"""
 import os
 import argparse
 import glob
