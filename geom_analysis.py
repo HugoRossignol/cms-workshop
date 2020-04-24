@@ -1,4 +1,8 @@
-import numpy as np 
+"""
+Change to the file
+"""
+
+import numpy as np
 import os
 import argparse
 
@@ -35,7 +39,7 @@ if __name__=='__main__':
     parser.add_argument('xyz_file',help="The filepath for the xyz file to analyse.")
     parser.add_argument('-minimum_bond',help="Input minimum bond length",type=float,default=0)
     parser.add_argument('-maximum_bond',help="Input maximum bond length",type=float,default=1.5)
-    
+
     args=parser.parse_args()
     #path_file=os.path.join('data','water.xyz')
     path_file = args.xyz_file
