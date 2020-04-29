@@ -19,15 +19,16 @@ def read_lines(path):
 if __name__=='__main__':
 	#Define the argument parser and what arguments it should parse.
 	parser=argparse.ArgumentParser(description="This script parses amber mdout files to extract the total energy. You can also use it to create plots.")
-	parser.add_argument("input_file",help="The filepath to the file to be analyzed.")
+	parser.add_argument("input_file",help="The filepath to the file to be analyzed.",nargs='*')
 	#could use nargs='*' and not need to have path in string
 	parser.add_argument("-plot_check",help="Tag to check whether the user wants a plot.",action='store_true')
 	#Get the arguments.
 	args=parser.parse_args()
 	#Get all the filenames.
-	path_full=args.input_file
-	file_names=glob.glob(path_full)
-	#Check if should plot the results.
+	#path_full=args.input_file
+	#file_names=glob.glob(path_full)
+	file_names=args.input_file
+    #Check if should plot the results.
 	plot_check=args.plot_check
 
 	#Loop over all files.
