@@ -1,5 +1,11 @@
 """
-Change to the file
+This module has functions associated with analyzing the geometry of a molecule.
+
+When run as a script and given an xyz file, this script will print out the bonds. Run 
+
+$ python geometry_analysis.py --help 
+
+to see input options.
 """
 
 import numpy as np
@@ -27,6 +33,9 @@ def open_xyz(file_path):
     coordinates=coordinates.astype(np.float)
     return symbols, coordinates
 def bond_check(distance,min_bond=0,max_bond=1.5):
+    """
+    Check if a distance is within the range of a bonding distance.
+    """
     if distance > min_bond and distance < max_bond:
         return True
     else:
